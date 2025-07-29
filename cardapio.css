@@ -1,88 +1,37 @@
-/* Reset */
-* {
+.hotbar {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.hotbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Layout principal */
-body {
-  background: #fff7f0;
-  color: #333;
-  padding: 20px;
+.hotbar a {
+  text-decoration: none;
+  color: #e63946;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition: background 0.3s;
 }
 
-/* Cabeçalho */
-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  color: #d35400;
-}
-
-/* Seção de pizzas */
-.cardapio {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.pizza-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 16px;
-  width: 260px;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.pizza-card:hover {
-  transform: scale(1.03);
-}
-
-.pizza-card img {
-  width: 100%;
+.hotbar a:hover {
+  background-color: #ffe8e8;
   border-radius: 8px;
 }
 
-.pizza-card h3 {
-  margin-top: 12px;
-  color: #e67e22;
+/* Espaço no topo para não cobrir o conteúdo */
+body {
+  padding-top: 60px;
 }
-
-.pizza-card p {
-  font-size: 0.95rem;
-  margin: 8px 0;
-  color: #555;
-}
-
-.pizza-card span {
-  font-weight: bold;
-  color: #2ecc71;
-  display: block;
-  margin-bottom: 12px;
-}
-
-/* Botão adicionar */
-button {
-  background-color: #e67e22;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-
-button:hover {
-  background-color: #d35400;
-}
-
-/* Carrinho (a gente vai fazer ele depois com JS e CSS extra) */
