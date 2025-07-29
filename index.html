@@ -4,79 +4,62 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pizzaria do Gabriel</title>
-  <link rel="stylesheet" href="cardapio.css" />
+  <link rel="stylesheet" href="cardapio.css">
 </head>
 <body>
 
-  <!-- 🔲 Área futura para o banner -->
-  <div class="banner-placeholder">
-    <!-- Aqui você poderá colocar um banner futuramente -->
-  </div>
-
-  <!-- 🧀 Título principal -->
-  <header>
+  <header class="cabecalho">
     <h1>Bem-vindo à Pizzaria do Gabriel!</h1>
+    <img src="https://raw.githubusercontent.com/GabrielSimioni12/Cardapio-Digital-Pizzaria/024138b6c2bfaafdd25555900dd383eac149cb98/imagens/list-solid-full.svg" alt="Abrir Menu" id="menuToggle" />
   </header>
 
-  <!-- 🔥 HOT BAR de navegação -->
+  <!-- Hotbar abaixo do título -->
   <nav class="hotbar">
     <ul>
       <li>
         <a href="#pizzas">
-          <img src="img/icon-pizza.png" alt="Ícone Pizza" class="icone"> Pizzas
+          <img src="img/icon-pizza.png" alt="Pizza" class="icone"> Pizzas
         </a>
       </li>
       <li>
         <a href="#pizzas-doces">
-          <img src="img/icon-doce.png" alt="Ícone Pizza Doce" class="icone"> Pizzas Doces
+          <img src="https://raw.githubusercontent.com/GabrielSimioni12/Cardapio-Digital-Pizzaria/024138b6c2bfaafdd25555900dd383eac149cb98/imagens/ice-cream-solid-full.svg" alt="Pizza Doce" class="icone"> Pizzas Doces
         </a>
       </li>
       <li>
         <a href="#bebidas">
-          <img src="img/icon-bebida.png" alt="Ícone Bebida" class="icone"> Bebidas
+          <img src="img/icon-bebida.png" alt="Bebida" class="icone"> Bebidas
         </a>
       </li>
     </ul>
   </nav>
 
-  <!-- 🍕 Seção Pizzas -->
-  <section id="pizzas" class="section">
-    <h2>Pizzas Salgadas</h2>
-    <div class="card-container">
-      <!-- Exemplo de Card -->
-      <div class="card">
-        <img src="img/calabresa.jpg" alt="Pizza Calabresa" />
-        <h3>Calabresa</h3>
-        <p>Calabresa, queijo e cebola</p>
-        <button onclick="adicionarAoCarrinho('Calabresa', 39.90, 'img/calabresa.jpg')">Adicionar</button>
-      </div>
+  <!-- Menu lateral (abre com ícone) -->
+  <div id="menuLateral" class="menu-lateral">
+    <ul>
+      <li><a href="#pizzas">Pizzas</a></li>
+      <li><a href="#pizzas-doces">Pizzas Doces</a></li>
+      <li><a href="#bebidas">Bebidas</a></li>
+    </ul>
+  </div>
 
-      <!-- Adicione mais pizzas conforme quiser -->
-    </div>
-  </section>
+  <!-- Conteúdo das seções -->
+  <main>
+    <section id="pizzas">
+      <h2>Pizzas Salgadas</h2>
+      <!-- Cards de pizzas -->
+    </section>
 
-  <!-- 🍫 Seção Pizzas Doces -->
-  <section id="pizzas-doces" class="section">
-    <h2>Pizzas Doces</h2>
-    <div class="card-container">
-      <!-- Cards das pizzas doces entrarão aqui -->
-    </div>
-  </section>
+    <section id="pizzas-doces">
+      <h2>Pizzas Doces</h2>
+      <!-- Cards de pizzas doces -->
+    </section>
 
-  <!-- 🥤 Seção Bebidas -->
-  <section id="bebidas" class="section">
-    <h2>Bebidas</h2>
-    <div class="card-container">
-      <!-- Cards das bebidas entrarão aqui -->
-    </div>
-  </section>
-
-  <!-- 🛒 Carrinho -->
-  <aside id="carrinho">
-    <h2>Seu Carrinho</h2>
-    <ul id="lista-carrinho"></ul>
-    <p>Total: R$ <span id="total">0.00</span></p>
-  </aside>
+    <section id="bebidas">
+      <h2>Bebidas</h2>
+      <!-- Cards de bebidas -->
+    </section>
+  </main>
 
   <script src="pizza.js"></script>
 </body>

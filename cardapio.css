@@ -1,10 +1,65 @@
-.hotbar {
-  background-color: #fff;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fffaf0;
+  color: #333;
+}
+
+header.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e63946;
+  color: white;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+#menuToggle {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+/* Menu lateral */
+.menu-lateral {
   position: fixed;
   top: 0;
-  width: 100%;
+  right: -200px;
+  width: 200px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  padding-top: 60px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-lateral li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu-lateral a {
+  text-decoration: none;
+  color: #e63946;
+  font-size: 18px;
+}
+
+/* Hotbar */
+.hotbar {
+  background-color: #fff;
+  margin-top: 10px;
   padding: 10px 0;
-  z-index: 999;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -22,16 +77,30 @@
   color: #e63946;
   font-weight: bold;
   font-size: 18px;
-  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   transition: background 0.3s;
 }
 
 .hotbar a:hover {
   background-color: #ffe8e8;
   border-radius: 8px;
+  padding: 6px 10px;
 }
 
-/* Espaço no topo para não cobrir o conteúdo */
-body {
-  padding-top: 60px;
+.icone {
+  width: 24px;
+  height: 24px;
+}
+
+/* Seções */
+section {
+  padding: 40px 20px;
+}
+
+section h2 {
+  font-size: 24px;
+  color: #e63946;
+  margin-bottom: 20px;
 }
