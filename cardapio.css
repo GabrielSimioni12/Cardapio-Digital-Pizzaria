@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #fefefe;
+  color: #333;
+}
+
+header {
+  background-color: #d62828;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.cardapio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 800px;
+}
+
+.pizza-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 240px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.pizza-card:hover {
+  transform: scale(1.03);
+}
+
+.pizza-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.pizza-card h3 {
+  margin: 0.5rem 0 0.2rem;
+}
+
+.pizza-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.pizza-card span {
+  display: block;
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+.pizza-card button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #003049;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pizza-card button:hover {
+  background-color: #005a8d;
+}
+
+#carrinho {
+  min-width: 250px;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+#carrinho h2 {
+  margin-bottom: 1rem;
+}
+
+#lista-carrinho li {
+  margin-bottom: 0.5rem;
+  list-style: none;
+}
+
+#lista-carrinho button {
+  margin-left: 4px;
+  padding: 2px 6px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#finalizar {
+  margin-top: 1rem;
+  background-color: #2a9d8f;
+  color: white;
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#finalizar:hover {
+  background-color: #21867a;
+}
+
+/* Modal */
+#modal.hidden {
+  display: none;
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.modal-content button {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background-color: #003049;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}

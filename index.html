@@ -1,230 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cardápio Digital - Pizzaria</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      display: flex;
-      background-color: #f8f8f8;
-    }
-
-    header {
-      width: 100%;
-      padding: 20px;
-      background-color: #d35400;
-      color: white;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
-
-    main {
-      margin-top: 100px;
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      width: 70%;
-    }
-
-    .pizza-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      width: 250px;
-      padding: 15px;
-      text-align: center;
-    }
-
-    .pizza-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .pizza-card h3 {
-      margin: 10px 0 5px;
-    }
-
-    .pizza-card p {
-      font-size: 14px;
-      color: #555;
-    }
-
-    .pizza-card button {
-      margin-top: 10px;
-      background-color: #27ae60;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .pizza-card button:hover {
-      background-color: #219150;
-    }
-
-    aside {
-      width: 30%;
-      background-color: #fff;
-      padding: 20px;
-      border-left: 1px solid #ddd;
-      position: fixed;
-      right: 0;
-      top: 100px;
-      bottom: 0;
-      overflow-y: auto;
-    }
-
-    aside h2 {
-      margin-top: 0;
-    }
-
-    .carrinho-item {
-      border-bottom: 1px solid #eee;
-      padding: 10px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .item-info {
-      flex-grow: 1;
-    }
-
-    .item-controles {
-      display: flex;
-      gap: 5px;
-    }
-
-    .item-controles button {
-      padding: 5px 8px;
-      background: #ccc;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .item-controles button:hover {
-      background: #bbb;
-    }
-
-    .total {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 18px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzaria Digital</title>
+  <link rel="stylesheet" href="cardapio.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <header>
     <h1>🍕 Cardápio da Pizzaria do Gabriel</h1>
   </header>
 
   <main>
-    <div class="pizza-card">
-      <img src="img/calabresa.jpg" alt="Pizza Calabresa">
-      <h3>Calabresa</h3>
-      <p>Molho, queijo, calabresa, cebola</p>
-      <button onclick="adicionarAoCarrinho('Calabresa', 39.90)">Adicionar</button>
-    </div>
+    <section class="cardapio">
+      <!-- Pizzas -->
+      <div class="pizza-card">
+        <img src="img/calabresa.jpg" alt="Pizza Calabresa">
+        <h3>Calabresa</h3>
+        <p>Molho, queijo, calabresa, cebola</p>
+        <span>R$ 39,90</span>
+        <button onclick="adicionarAoCarrinho('Calabresa', 39.90)">Adicionar</button>
+      </div>
 
-    <div class="pizza-card">
-      <img src="img/margherita.jpg" alt="Pizza Margherita">
-      <h3>Margherita</h3>
-      <p>Molho, queijo, tomate, manjericão</p>
-      <button onclick="adicionarAoCarrinho('Margherita', 42.90)">Adicionar</button>
-    </div>
+      <div class="pizza-card">
+        <img src="img/margherita.jpg" alt="Pizza Margherita">
+        <h3>Margherita</h3>
+        <p>Molho, mussarela, tomate, manjericão</p>
+        <span>R$ 42,90</span>
+        <button onclick="adicionarAoCarrinho('Margherita', 42.90)">Adicionar</button>
+      </div>
 
-    <div class="pizza-card">
-      <img src="img/frango-catupiry.jpg" alt="Pizza Frango com Catupiry">
-      <h3>Frango com Catupiry</h3>
-      <p>Molho, queijo, frango desfiado, catupiry</p>
-      <button onclick="adicionarAoCarrinho('Frango com Catupiry', 44.90)">Adicionar</button>
-    </div>
+      <div class="pizza-card">
+        <img src="img/frango-catupiry.jpg" alt="Pizza Frango com Catupiry">
+        <h3>Frango c/ Catupiry</h3>
+        <p>Molho, frango, catupiry, milho</p>
+        <span>R$ 45,90</span>
+        <button onclick="adicionarAoCarrinho('Frango c/ Catupiry', 45.90)">Adicionar</button>
+      </div>
+    </section>
+
+    <aside id="carrinho">
+      <h2>Carrinho 🛒</h2>
+      <ul id="lista-carrinho"></ul>
+      <p id="total">Total: R$ 0,00</p>
+      <button id="finalizar" onclick="finalizarPedido()">Finalizar Pedido</button>
+    </aside>
   </main>
 
-  <aside>
-    <h2>🛒 Carrinho</h2>
-    <div id="carrinho"></div>
-    <p class="total" id="total">Total: R$ 0,00</p>
-  </aside>
+  <!-- Modal -->
+  <div id="modal" class="hidden">
+    <div class="modal-content">
+      <h2>✅ Pedido realizado!</h2>
+      <p>Seu pedido foi enviado para a cozinha.</p>
+      <button onclick="fecharModal()">Fechar</button>
+    </div>
+  </div>
 
-  <script>
-    const carrinho = [];
-    const carrinhoDiv = document.getElementById('carrinho');
-    const totalSpan = document.getElementById('total');
-
-    function adicionarAoCarrinho(nome, preco) {
-      const existente = carrinho.find(item => item.nome === nome);
-      if (existente) {
-        existente.quantidade++;
-      } else {
-        carrinho.push({ nome, preco, quantidade: 1 });
-      }
-      atualizarCarrinho();
-    }
-
-    function removerItem(nome) {
-      const index = carrinho.findIndex(item => item.nome === nome);
-      if (index !== -1) {
-        carrinho.splice(index, 1);
-        atualizarCarrinho();
-      }
-    }
-
-    function aumentarQuantidade(nome) {
-      const item = carrinho.find(i => i.nome === nome);
-      if (item) {
-        item.quantidade++;
-        atualizarCarrinho();
-      }
-    }
-
-    function diminuirQuantidade(nome) {
-      const item = carrinho.find(i => i.nome === nome);
-      if (item && item.quantidade > 1) {
-        item.quantidade--;
-      } else {
-        removerItem(nome);
-      }
-      atualizarCarrinho();
-    }
-
-    function atualizarCarrinho() {
-      carrinhoDiv.innerHTML = '';
-      let total = 0;
-
-      carrinho.forEach(item => {
-        const subtotal = item.preco * item.quantidade;
-        total += subtotal;
-
-        const div = document.createElement('div');
-        div.className = 'carrinho-item';
-        div.innerHTML = `
-          <div class="item-info">
-            ${item.nome} - ${item.quantidade}x - R$ ${subtotal.toFixed(2)}
-          </div>
-          <div class="item-controles">
-            <button onclick="aumentarQuantidade('${item.nome}')">+</button>
-            <button onclick="diminuirQuantidade('${item.nome}')">-</button>
-            <button onclick="removerItem('${item.nome}')">🗑</button>
-          </div>
-        `;
-        carrinhoDiv.appendChild(div);
-      });
-
-      totalSpan.textContent = `Total: R$ ${total.toFixed(2)}`;
-    }
-  </script>
+  <script src="pizza.js"></script>
 </body>
 </html>
