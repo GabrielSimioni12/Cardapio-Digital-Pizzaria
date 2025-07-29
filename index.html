@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cardápio Digital - Pizzaria</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      background-color: #f8f8f8;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px;
+      background-color: #d35400;
+      color: white;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    main {
+      margin-top: 100px;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 70%;
+    }
+
+    .pizza-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .pizza-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .pizza-card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .pizza-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .pizza-card button {
+      margin-top: 10px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .pizza-card button:hover {
+      background-color: #219150;
+    }
+
+    aside {
+      width: 30%;
+      background-color: #fff;
+      padding: 20px;
+      border-left: 1px solid #ddd;
+      position: fixed;
+      right: 0;
+      top: 100px;
+      bottom: 0;
+      overflow-y: auto;
+    }
+
+    aside h2 {
+      margin-top: 0;
+    }
+
+    .carrinho-item {
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .total {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🍕 Cardápio da Pizzaria do Gabriel</h1>
+  </header>
+
+  <main>
+    <div class="pizza-card">
+      <img src="https://via.placeholder.com/250x150?text=Calabresa" alt="Pizza Calabresa">
+      <h3>Calabresa</h3>
+      <p>Molho, queijo, calabresa, cebola</p>
+      <button onclick="adicionarAoCarrinho('Calabresa', 39.90)">Adicionar</button>
+    </div>
+
+    <div class="pizza-card">
+      <img src="https://via.placeholder.com/250x150?text=Margherita" alt="Pizza Margherita">
+      <h3>Margherita</h3>
+      <p>Molho, queijo, tomate, manjericão</p>
+      <button onclick="adicionarAoCarrinho('Margherita', 42.90)">Adicionar</button>
+    </div>
+
+    <div class="pizza-card">
+      <img src="https://via.placeholder.com/250x150?text=Frango+Catupiry" alt="Pizza Frango com Catupiry">
+      <h3>Frango com Catupiry</h3>
+      <p>Molho, queijo, frango desfiado, catupiry</p>
+      <button onclick="adicionarAoCarrinho('Frango com Catupiry', 44.90)">Adicionar</button>
+    </div>
+  </main>
+
+  <aside>
+    <h2>🛒 Carrinho</h2>
+    <div id="carrinho"></div>
+    <p class="total" id="total">Total: R$ 0,00</p>
+  </aside>
+
+  <script>
+    const carrinho = [];
+    const carrinhoDiv = document.getElementById('carrinho');
+    const totalSpan = document.getElementById('total');
+
+    function adicionarAoCarrinho(nome, preco) {
+      carrinho.push({ nome, preco });
+      atualizarCarrinho();
+    }
+
+    function atualizarCarrinho() {
+      carrinhoDiv.innerHTML = '';
+      let total = 0;
+
+      carrinho.forEach((item, index) => {
+        total += item.preco;
+        const div = document.createElement('div');
+        div.className = 'carrinho-item';
+        div.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+        carrinhoDiv.appendChild(div);
+      });
+
+     totalSpan.textContent = `Total: R$ ${total.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
