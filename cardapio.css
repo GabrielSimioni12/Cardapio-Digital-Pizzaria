@@ -1,45 +1,45 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
+/* Layout principal */
 body {
-  background-color: #fefefe;
+  background: #fff7f0;
   color: #333;
+  padding: 20px;
 }
 
+/* Cabeçalho */
 header {
-  background-color: #d62828;
-  color: white;
-  padding: 1rem;
   text-align: center;
+  margin-bottom: 40px;
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 2rem;
-  gap: 2rem;
-  justify-content: center;
+header h1 {
+  font-size: 2.5rem;
+  color: #d35400;
 }
 
+/* Seção de pizzas */
 .cardapio {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 800px;
+  gap: 20px;
+  justify-content: center;
 }
 
 .pizza-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background: #fff;
   border-radius: 12px;
-  width: 240px;
-  padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 16px;
+  width: 260px;
+  text-align: center;
+  transition: transform 0.2s ease;
 }
 
 .pizza-card:hover {
@@ -48,111 +48,41 @@ main {
 
 .pizza-card img {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
   border-radius: 8px;
 }
 
 .pizza-card h3 {
-  margin: 0.5rem 0 0.2rem;
+  margin-top: 12px;
+  color: #e67e22;
 }
 
 .pizza-card p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  margin: 8px 0;
   color: #555;
 }
 
 .pizza-card span {
-  display: block;
-  margin: 0.5rem 0;
   font-weight: bold;
+  color: #2ecc71;
+  display: block;
+  margin-bottom: 12px;
 }
 
-.pizza-card button {
-  width: 100%;
-  padding: 0.5rem;
-  background-color: #003049;
+/* Botão adicionar */
+button {
+  background-color: #e67e22;
   color: white;
   border: none;
-  border-radius: 8px;
+  padding: 10px 16px;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
   transition: background 0.2s;
 }
 
-.pizza-card button:hover {
-  background-color: #005a8d;
+button:hover {
+  background-color: #d35400;
 }
 
-#carrinho {
-  min-width: 250px;
-  background-color: #f8f9fa;
-  padding: 1rem;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-}
-
-#carrinho h2 {
-  margin-bottom: 1rem;
-}
-
-#lista-carrinho li {
-  margin-bottom: 0.5rem;
-  list-style: none;
-}
-
-#lista-carrinho button {
-  margin-left: 4px;
-  padding: 2px 6px;
-  background-color: #ddd;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#finalizar {
-  margin-top: 1rem;
-  background-color: #2a9d8f;
-  color: white;
-  width: 100%;
-  padding: 0.6rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-#finalizar:hover {
-  background-color: #21867a;
-}
-
-/* Modal */
-#modal.hidden {
-  display: none;
-}
-
-#modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.modal-content button {
-  margin-top: 1rem;
-  padding: 0.6rem 1rem;
-  background-color: #003049;
-  color: white;
-  border: none;
-  border-radius: 8px;
-}
+/* Carrinho (a gente vai fazer ele depois com JS e CSS extra) */
