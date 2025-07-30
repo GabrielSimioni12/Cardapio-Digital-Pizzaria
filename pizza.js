@@ -58,3 +58,12 @@ function atualizarCarrinho() {
 
   totalCarrinho.textContent = total.toFixed(2);
 }
+
+
+// Toggle do carrinho
+const btnCarrinho = document.getElementById('abrirCarrinhoBtn');
+const carrinhoDiv = document.getElementById('carrinho');
+
+btnCarrinho.addEventListener('click', () => {
+  carrinhoDiv.classList.toggle('aberto');
+});
