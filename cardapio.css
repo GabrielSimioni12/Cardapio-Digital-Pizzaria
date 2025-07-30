@@ -125,3 +125,43 @@ section h2 {
   background-size: cover;
   background-position: center;
 }
+
+
+
+
+
+
+#carrinho {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 300px;
+  background-color: #fff;
+  border-left: 2px solid #ccc;
+  padding: 15px;
+  box-shadow: -3px 0 8px rgba(0,0,0,0.1);
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+#carrinho h2 {
+  margin-top: 0;
+}
+
+#carrinho ul {
+  list-style: none;
+  padding: 0;
+}
+
+#carrinho li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#carrinho button {
+  margin-left: 5px;
+  padding: 3px 6px;
+  font-size: 12px;
+  cursor: pointer;
+}

@@ -42,6 +42,13 @@
       <li><a href="#bebidas">Bebidas</a></li>
     </ul>
   </div>
+  
+  <!-- Carrinho inteligente -->
+  <aside id="carrinho">
+  <h2>Carrinho</h2>
+  <ul id="itens-carrinho"></ul>
+  <p><strong>Total: R$ <span id="total-carrinho">0,00</span></strong></p>
+</aside>
 
 <section id="pizzas">
   <h2>Pizzas Salgadas</h2>
@@ -51,6 +58,7 @@
     <h3>Margherita</h3>
     <p>Mussarela, tomate, manjericão e azeite.</p>
     <strong>R$ 39,90</strong>
+    <button onclick="adicionarAoCarrinho('Margherita', 39.90)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-pizza">
@@ -58,6 +66,7 @@
     <h3>Calabresa</h3>
     <p>Calabresa fatiada, cebola e azeitonas.</p>
     <strong>R$ 42,90</strong>
+    <button onclick="adicionarAoCarrinho('Calabresa', 42.90)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-pizza">
@@ -65,6 +74,7 @@
     <h3>Frango com Catupiry</h3>
     <p>Frango desfiado e catupiry cremoso.</p>
     <strong>R$ 44,90</strong>
+    <button onclick="adicionarAoCarrinho('Frango com Catupiry', 44.90)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-pizza">
@@ -72,6 +82,7 @@
     <h3>Portuguesa</h3>
     <p>Presunto, ovos, cebola, azeitonas e ervilhas.</p>
     <strong>R$ 43,90</strong>
+    <button onclick="adicionarAoCarrinho('Portuguesa', 43.90)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-pizza">
@@ -79,6 +90,7 @@
     <h3>Quatro Queijos</h3>
     <p>Mussarela, parmesão, gorgonzola e catupiry.</p>
     <strong>R$ 47,90</strong>
+    <button onclick="adicionarAoCarrinho('Quatro Queijos', 47.90)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-pizza">
@@ -86,6 +98,7 @@
     <h3>Atum</h3>
     <p>Atum, cebola, tomate e azeitonas.</p>
     <strong>R$ 42,90</strong>
+    <button onclick="adicionarAoCarrinho('Atum', 42.90)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-pizza">
@@ -93,6 +106,7 @@
     <h3>Palmito</h3>
     <p>Palmito, ervilhas e catupiry.</p>
     <strong>R$ 45,90</strong>
+    <button onclick="adicionarAoCarrinho('Palmito', 45.90)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-pizza">
@@ -100,6 +114,7 @@
     <h3>Vegana</h3>
     <p>Legumes grelhados e queijo vegetal.</p>
     <strong>R$ 48,90</strong>
+    <button onclick="adicionarAoCarrinho('Vegana', 48.90)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-pizza">
@@ -107,6 +122,7 @@
     <h3>Bacon</h3>
     <p>Bacon crocante, queijo e molho barbecue.</p>
     <strong>R$ 46,90</strong>
+    <button onclick="adicionarAoCarrinho('Bacon', 46.90)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-pizza">
@@ -114,6 +130,7 @@
     <h3>Mexicana</h3>
     <p>Calabresa, milho, pimenta e queijo.</p>
     <strong>R$ 44,90</strong>
+    <button onclick="adicionarAoCarrinho('Mexicana', 44.90)">Adicionar ao Carrinho</button>
   </div>
 </section>
 
@@ -125,6 +142,7 @@
     <h3>Chocolate com Morango</h3>
     <p>Creme de chocolate e morangos frescos.</p>
     <strong>R$ 39,90</strong>
+    <button onclick="adicionarAoCarrinho('Chocolate com Morango', 39.90)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-pizza-doce">
@@ -132,6 +150,7 @@
     <h3>Romeu e Julieta</h3>
     <p>Goiabada com queijo cremoso.</p>
     <strong>R$ 35,90</strong>
+    <button onclick="adicionarAoCarrinho('Romeu e Julieta', 35.90)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-pizza-doce">
@@ -139,6 +158,7 @@
     <h3>Banana com Canela</h3>
     <p>Banana fatiada e canela polvilhada.</p>
     <strong>R$ 34,90</strong>
+    <button onclick="adicionarAoCarrinho('Banana com Canela', 34.90)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-pizza-doce">
@@ -146,8 +166,11 @@
     <h3>Prestígio</h3>
     <p>Chocolate e coco ralado.</p>
     <strong>R$ 38,90</strong>
+    <button onclick="adicionarAoCarrinho('Prestígio', 38.90)">Adicionar ao Carrinho</button>
   </div>
 </section>
+
+
 
 <section id="bebidas">
   <h2>Bebidas</h2>
@@ -157,6 +180,7 @@
     <h3>Refrigerante Coca-Cola</h3>
     <p>Lata 350ml</p>
     <strong>R$ 6,00</strong>
+    <button onclick="adicionarAoCarrinho('Coca-Cola', 6.00)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-bebida">
@@ -164,6 +188,7 @@
     <h3>Suco de Laranja</h3>
     <p>Natural, 300ml</p>
     <strong>R$ 8,00</strong>
+    <button onclick="adicionarAoCarrinho('Suco de Laranja', 8.00)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-bebida">
@@ -171,6 +196,7 @@
     <h3>Água Mineral</h3>
     <p>500ml, sem gás</p>
     <strong>R$ 4,00</strong>
+    <button onclick="adicionarAoCarrinho('Água Mineral', 4.00)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-bebida">
@@ -178,6 +204,7 @@
     <h3>Chá Gelado</h3>
     <p>Sabor limão, 350ml</p>
     <strong>R$ 6,50</strong>
+    <button onclick="adicionarAoCarrinho('Chá Gelado', 6.50)">Adicionar ao Carrinho</button>
   </div>
 
   <div class="card-bebida">
@@ -185,6 +212,7 @@
     <h3>Guaraná Antarctica</h3>
     <p>Lata 350ml</p>
     <strong>R$ 6,00</strong>
+    <button onclick="adicionarAoCarrinho('Guaraná Antarctica', 6.00)">Adicionar ao Carrinho</button>
   </div>
 </section>
 
