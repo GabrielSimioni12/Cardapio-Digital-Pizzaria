@@ -1,5 +1,5 @@
 body {
-  background: url('https://i.imgur.com/FCRK4Nw.jpg'); /* textura madeira ou tijolinhos */
+  background: url('imagens/fundo.jpg'); /* textura madeira ou tijolinhos */
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -339,8 +339,8 @@ section h2 {
 
 
 .imagem-produto {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -396,3 +396,72 @@ section h2 {
   gap: 20px;
   padding: 30px;
 }
+
+
+
+
+.produto-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.produto-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* escurece o fundo */
+  z-index: 0;
+}
+
+.produto-card * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+/* Fundos personalizados */
+.produto-card.margherita {
+  background-image: url('imagens/pexels-antonius-ferret-6223177.jpg');
+}
+
+.produto-card.calabresa {
+  background-image: url('imagens/pexels-pedrofurtadoo-31094820.jpg');
+}
+.produto-card.frango {
+  background-image: url('imagens/pexels-pedrofurtadoo-31450857.jpg');
+}
+.produto-card.portuguesa {
+  background-image: url('imagens/1399febce0667511c4c4314a36c80a28_pizza-portuguesa.jpg');
+}
+
+.produto-card.quatro-queijos {
+  background-image: url('imagens/pizza-mussarela.jpg');
+}
+.produto-card.atum {
+  background-image: url('imagens/pizza-de-atum-de-liquidificador.webp');
+}
+.produto-card.palmito {
+  background-image: url('imagens/pizza palmito.jpg');
+}
+
+.produto-card.vegana {
+  background-image: url('imagens/pizza-vegana.jpeg');
+}
+
+.produto-card.bacon {
+  background-image: url('imagens/bacon.jpg');
+}
+.produto-card.mexicana {
+  background-image: url('imagens/mexicana.jpg');
+}
+
+/* Adicione mais conforme for criando outras pizzas */
