@@ -1,8 +1,9 @@
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fffaf0;
-  color: #333;
+  background: url('https://i.imgur.com/FCRK4Nw.jpg'); /* textura madeira ou tijolinhos */
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'Arial', sans-serif;
 }
 
 header.cabecalho {
@@ -326,4 +327,72 @@ section h2 {
 .card-produto::after {
   display: none;
   content: none;
+}
+
+
+
+.card-produto:hover {
+  transform: scale(1.01);
+  transition: transform 0.2s ease;
+}
+
+
+
+.imagem-produto {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+.card-produto {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 15px auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.card-produto:hover {
+  transform: scale(1.03);
+}
+
+.nome-produto {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.descricao-produto {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.preco-produto {
+  font-size: 18px;
+  color: #b22222;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+
+.container-produtos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
 }
