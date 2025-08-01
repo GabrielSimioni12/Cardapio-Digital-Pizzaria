@@ -576,3 +576,21 @@ html {
   padding: 10px;
   border-radius: 10px;
 }
+
+
+#finalizarPedido {
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+#finalizarPedido:hover {
+  background-color: #e88c00;
+}

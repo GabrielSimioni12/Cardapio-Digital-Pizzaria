@@ -96,3 +96,19 @@ document.addEventListener('DOMContentLoaded', function () {
   // Mostrar a primeira seção por padrão
   document.getElementById('pizzas').classList.add('ativa');
 });
+
+
+
+document.getElementById("finalizarPedido").addEventListener("click", function () {
+  const mensagem = document.getElementById("mensagemConfirmacao");
+  mensagem.style.display = "block";
+
+  // Opcional: limpa o carrinho
+  carrinho = [];
+  atualizarCarrinho();
+
+  // Oculta a mensagem após 5 segundos
+  setTimeout(() => {
+    mensagem.style.display = "none";
+  }, 5000);
+});
