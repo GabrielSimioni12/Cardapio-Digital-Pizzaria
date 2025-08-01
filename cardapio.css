@@ -464,4 +464,24 @@ section h2 {
   background-image: url('imagens/mexicana.jpg');
 }
 
+.produto-card.cholate {
+  background-image: url('imagens/pizza-de-chocolate-com-morango.avif');
+}
+
+.produto-card.romeu-e-julieta {
+  background-image: url('imagens/pizza-romeu-e-julieta.avif');
+}
+
+
+.produto-card.banana {
+  background-image: url('imagens/pizzadebananaecanela.jpg');
+}
+
+.produto-card.prestigio {
+  background-image: url('imagens/pizza prestigio.png');
+}
+
+.produto-card.card-bebida {
+  background-image: url('imagens/fundo 2.jpg');
+}
 /* Adicione mais conforme for criando outras pizzas */
