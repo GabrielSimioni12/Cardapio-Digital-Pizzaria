@@ -484,4 +484,19 @@ section h2 {
 .produto-card.card-bebida {
   background-image: url('imagens/fundo 2.jpg');
 }
-/* Adicione mais conforme for criando outras pizzas */
+/* area dos backgrounds */
+
+.produto-card button {
+  background-color: #df3327;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.produto-card button:hover {
+  background-color: #df3327;
+}
