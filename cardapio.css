@@ -568,3 +568,11 @@ html {
   display: block;
   opacity: 1;
 }
+
+
+
+.produto-card {
+  margin-bottom: 25px; /* espaçamento vertical entre os cards */
+  padding: 10px;
+  border-radius: 10px;
+}
