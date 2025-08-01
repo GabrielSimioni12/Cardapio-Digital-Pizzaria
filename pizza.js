@@ -9,7 +9,7 @@ menuToggle.addEventListener('click', () => {
   }
 });
 
-const carrinho = [];
+let carrinho = [];
 const itensCarrinho = document.getElementById('itens-carrinho');
 const totalCarrinho = document.getElementById('total-carrinho');
 
@@ -46,10 +46,11 @@ function atualizarCarrinho() {
 
   carrinho.forEach(item => {
     const li = document.createElement('li');
+    li.classList.add('item-carrinho');
     li.innerHTML = `
-      ${item.nome} x${item.quantidade} - R$ ${(item.preco * item.quantidade).toFixed(2)}
-      <button onclick="adicionarAoCarrinho('${item.nome}', ${item.preco})">+</button>
-      <button onclick="removerDoCarrinho('${item.nome}')">-</button>
+      <span>${item.nome} x${item.quantidade} – R$ ${(item.preco * item.quantidade).toFixed(2)}</span>
+      <button class="quantidade-btn" onclick="adicionarAoCarrinho('${item.nome}', ${item.preco})">+</button>
+      <button class="quantidade-btn" onclick="removerDoCarrinho('${item.nome}')">-</button>
     `;
     itensCarrinho.appendChild(li);
 
@@ -69,7 +70,7 @@ btnCarrinho.addEventListener('click', () => {
 });
 
 
-// Espera o DOM carregar antes de rodar
+// Hotbar funcional
 document.addEventListener('DOMContentLoaded', function () {
   const botoes = document.querySelectorAll('.hotbar a');
   const secoes = document.querySelectorAll('.secao');
@@ -98,12 +99,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
+// Finalizar pedido
 document.getElementById("finalizarPedido").addEventListener("click", function () {
   const mensagem = document.getElementById("mensagemConfirmacao");
   mensagem.style.display = "block";
 
-  // Opcional: limpa o carrinho
+  // Limpa o carrinho
   carrinho = [];
   atualizarCarrinho();
 

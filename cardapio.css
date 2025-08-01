@@ -594,3 +594,58 @@ html {
 #finalizarPedido:hover {
   background-color: #e88c00;
 }
+
+.quantidade-btn {
+  background-color: #ffcc00;
+  border: none;
+  color: #333;
+  padding: 5px 10px;
+  margin: 0 2px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.quantidade-btn:hover {
+  background-color: #e6b800;
+}
+
+.item-carrinho {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-carrinho span {
+  flex: 1;
+}
+
+
+
+.item-carrinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.quantidade-btn {
+  margin-left: 5px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.quantidade-btn:hover {
+  background-color: #e68900;
+}
