@@ -113,3 +113,13 @@ document.getElementById("finalizarPedido").addEventListener("click", function ()
     mensagem.style.display = "none";
   }, 5000);
 });
+
+
+
+li.innerHTML = `
+  ${nome} x${item.quantidade} – R$ ${(item.preco * item.quantidade).toFixed(2)}
+  <div class="quantidade-container">
+    <button class="quantidade-btn" onclick="alterarQuantidade('${nome}', 1)">+</button>
+    <button class="quantidade-btn" onclick="alterarQuantidade('${nome}', -1)">–</button>
+  </div>
+`;

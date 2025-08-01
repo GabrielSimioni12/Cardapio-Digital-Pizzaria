@@ -579,7 +579,7 @@ html {
 
 
 #finalizarPedido {
-  background-color: #ff9900;
+  background-color: #5f3569;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -595,57 +595,106 @@ html {
   background-color: #e88c00;
 }
 
-.quantidade-btn {
-  background-color: #ffcc00;
-  border: none;
-  color: #333;
-  padding: 5px 10px;
-  margin: 0 2px;
-  font-weight: bold;
+
+
+/* Carrinho lateral */
+#carrinho {
+  position: fixed;
+  top: 60px;
+  right: -320px;
+  width: 300px;
+  background-color: #ebb214;
+  box-shadow: -2px 0 10px rgb(7, 7, 7);
+  padding: 20px;
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+  border-radius: 10px 0 0 10px;
+}
+
+#carrinho.aberto {
+  right: 0;
+}
+
+#carrinho h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #eceaea;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+#itens-carrinho li {
+  margin: 10px 0;
   font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #444;
+}
+
+.quantidade-btn {
+  background-color: #faf8f7;
+  border: none;
+  color: rgb(12, 12, 12);
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.quantidade-btn:hover {
+  background-color: #e64a19;
+}
+
+#total-carrinho {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 15px;
+  color: #eef0ee;
+}
+
+#finalizarPedido {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: rgb(253, 252, 252);
+  border: none;
+  font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
-.quantidade-btn:hover {
-  background-color: #e6b800;
+#finalizarPedido:hover {
+  background-color: #357c39;
 }
 
-.item-carrinho {
-  font-size: 15px;
-  color: #333;
-  margin-bottom: 8px;
+#mensagemConfirmacao {
+  display: none;
+  margin-top: 15px;
+  background-color: #dff0d8;
+  color: #3c763d;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+
+.quantidade-container {
+  display: flex;
+  gap: 5px;
+  margin-left: auto;
+}
+
+
+
+
+#itens-carrinho li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.item-carrinho span {
-  flex: 1;
-}
-
-
-
-.item-carrinho {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.quantidade-btn {
-  margin-left: 5px;
-  background-color: #ff9800;
-  color: white;
-  border: none;
-  padding: 4px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.quantidade-btn:hover {
-  background-color: #e68900;
+  gap: 10px;
 }
