@@ -683,11 +683,7 @@ html {
 
 
 
-.quantidade-container {
-  display: flex;
-  gap: 5px;
-  margin-left: auto;
-}
+
 
 
 
@@ -698,3 +694,11 @@ html {
   justify-content: space-between;
   gap: 10px;
 }
+
+.quantidade-container {
+  display: flex;
+  gap: 8px;
+  margin-left: 10px;
+  justify-content: flex-end;
+} 
+

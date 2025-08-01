@@ -35,8 +35,27 @@ function removerDoCarrinho(nome) {
       carrinho.splice(index, 1);
     }
   }
+}
 
-  atualizarCarrinho();
+function atualizarCarrinho() {
+  itensCarrinho.innerHTML = '';
+  let total = 0;
+
+  carrinho.forEach((item, index) => {
+    const li = document.createElement('li');
+    li.classList.add('item-carrinho');
+    li.innerHTML = `
+      <span>${item.nome} x${item.quantidade} – R$ ${(item.preco * item.quantidade).toFixed(2)}</span>
+      <div class="quantidade-container">
+        <button class="quantidade-btn" onclick="removerDoCarrinho('${item.nome}')">-</button>
+        <button class="quantidade-btn" onclick="adicionarAoCarrinho('${item.nome}', ${item.preco})">+</button>
+      </div>
+    `;
+    itensCarrinho.appendChild(li);
+    total += item.preco * item.quantidade;
+  });
+
+  totalCarrinho.textContent = total.toFixed(2);
 }
 
 // Atualiza visual do carrinho
@@ -116,10 +135,3 @@ document.getElementById("finalizarPedido").addEventListener("click", function ()
 
 
 
-li.innerHTML = `
-  ${nome} x${item.quantidade} – R$ ${(item.preco * item.quantidade).toFixed(2)}
-  <div class="quantidade-container">
-    <button class="quantidade-btn" onclick="alterarQuantidade('${nome}', 1)">+</button>
-    <button class="quantidade-btn" onclick="alterarQuantidade('${nome}', -1)">–</button>
-  </div>
-`;
