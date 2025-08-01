@@ -500,3 +500,71 @@ section h2 {
 .produto-card button:hover {
   background-color: #df3327;
 }
+
+.hotbar {
+  background-color: #a6120d; /* vermelho vinho */
+  padding: 10px 0;
+  text-align: center;
+}
+
+.hotbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.hotbar li {
+  display: inline-block;
+}
+
+.hotbar a {
+  color: #fff8e7; /* tom claro para contraste */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hotbar a:hover {
+  color: #9b784a; /* amarelo dourado no hover */
+}
+
+.icone {
+  width: 24px;
+  height: 24px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+/* Esconde todas as seções por padrão */
+.secao {
+  display: none;
+}
+
+/* Mostra a seção clicada */
+.secao.ativa {
+  display: block;
+}
+
+
+.secao {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.secao.ativa {
+  display: block;
+  opacity: 1;
+}

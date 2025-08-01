@@ -67,3 +67,32 @@ const carrinhoDiv = document.getElementById('carrinho');
 btnCarrinho.addEventListener('click', () => {
   carrinhoDiv.classList.toggle('aberto');
 });
+
+
+// Espera o DOM carregar antes de rodar
+document.addEventListener('DOMContentLoaded', function () {
+  const botoes = document.querySelectorAll('.hotbar a');
+  const secoes = document.querySelectorAll('.secao');
+
+  botoes.forEach(botao => {
+    botao.addEventListener('click', function (event) {
+      event.preventDefault(); // Evita o scroll padrão
+
+      const id = this.getAttribute('href').replace('#', '');
+
+      // Esconde todas as seções
+      secoes.forEach(secao => {
+        secao.classList.remove('ativa');
+      });
+
+      // Mostra só a clicada
+      const secaoAtiva = document.getElementById(id);
+      if (secaoAtiva) {
+        secaoAtiva.classList.add('ativa');
+      }
+    });
+  });
+
+  // Mostrar a primeira seção por padrão
+  document.getElementById('pizzas').classList.add('ativa');
+});
