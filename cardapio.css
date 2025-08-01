@@ -702,3 +702,38 @@ html {
   justify-content: flex-end;
 } 
 
+
+
+/* ======= Seção de Agradecimento ======= */
+.agradecimento-container {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  margin: 20px;
+}
+
+.foto-agradecimento {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #ccc;
+}
+
+.links-contato a {
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #444;
+  background-color: #e0e0e0;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.links-contato a:hover {
+  background-color: #d4d4d4;
+}
